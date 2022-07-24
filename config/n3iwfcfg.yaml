@@ -7,7 +7,7 @@ configuration:
     GlobalN3IWFID: # ID used to globally identify an N3IWF
       PLMNID: # Public Land Mobile Network ID, <PLMN ID> = <MCC><MNC>
         MCC: 208 # Mobile Country Code (3 digits string, digit: 0~9)
-        MNC: 93 # Mobile Network Code (2 or 3 digits string, digit: 0~9)
+        MNC: 95 # Mobile Network Code (2 or 3 digits string, digit: 0~9)
       N3IWFID: 135 # ID used to identify an N3IWF in PLMN (uinteger, range: 0~65535)
     Name: free5GC_N3IWF # The name of this N3IWF
     SupportedTAList: # Tracking Area supported by this N3IWF
@@ -15,14 +15,11 @@ configuration:
         BroadcastPLMNList: # Refer to TS 38.413
           - PLMNID: # Public Land Mobile Network ID
               MCC: 208 # Mobile Country Code (3 digits string, digit: 0~9)
-              MNC: 93 # Mobile Network Code (2 or 3 digits string, digit: 0~9)
+              MNC: 95 # Mobile Network Code (2 or 3 digits string, digit: 0~9)
             TAISliceSupportList: # Network Slice supported in this TAI
               - SNSSAI: # Single Network Slice Selection Assistance Information
                   SST: 1 # Slice/Service Type (1 byte hex string, range: 0~F)
-                  SD: 010203 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
-              - SNSSAI: # Single Network Slice Selection Assistance Information
-                  SST: 1 # Slice/Service Type (1 byte hex string, range: 0~F)
-                  SD: 112233 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+                  SD: 000001 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
 
   # --- N2 Interfaces ---
   AMFSCTPAddresses: # the IP list of N2 interfaces (SCTP) on AMF when using NGAP
