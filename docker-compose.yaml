@@ -14,7 +14,7 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      privnet:
+      default:
         aliases:
           - upf.free5gc.org
 
@@ -27,7 +27,7 @@ services:
     volumes:
       - dbdata:/data/db
     networks:
-      privnet:
+      default:
         aliases:
           - db
 
@@ -46,7 +46,7 @@ services:
       DB_URI: mongodb://db/free5gc
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - nrf.free5gc.org
     depends_on:
@@ -66,7 +66,7 @@ services:
     environment:
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - amf.free5gc.org
     depends_on:
@@ -86,7 +86,7 @@ services:
     environment:
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - ausf.free5gc.org
     depends_on:
@@ -106,7 +106,7 @@ services:
     environment:
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - nssf.free5gc.org
     depends_on:
@@ -126,7 +126,7 @@ services:
     environment:
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - pcf.free5gc.org
     depends_on:
@@ -147,7 +147,7 @@ services:
     environment:
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - smf.free5gc.org
     depends_on:
@@ -168,7 +168,7 @@ services:
     environment:
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - udm.free5gc.org
     depends_on:
@@ -190,7 +190,7 @@ services:
       DB_URI: mongodb://db/free5gc
       GIN_MODE: release
     networks:
-      privnet:
+      default:
         aliases:
           - udr.free5gc.org
     depends_on:
@@ -212,7 +212,7 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      privnet:
+      default:
         aliases:
           - n3iwf.free5gc.org
     depends_on:
@@ -232,7 +232,7 @@ services:
     environment:
       - GIN_MODE=release
     networks:
-      privnet:
+      default:
         aliases:
           - webui
     ports:
@@ -241,7 +241,7 @@ services:
       - db
 
 networks:
-  privnet:
+  default:
     ipam:
       driver: default
       config:
